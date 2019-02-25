@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MvpDemo</string>
+
+    <string name="network_error_and_late">网络异常，请稍后再试</string>
+    <string name="parse_error_and_late">解析错误，请稍后再试</string>
+    <string name="http_error_and_late">服务器错误，请稍后再试</string>
+    <string name="timeout_and_late">请求超时，请稍后再试</string>
+    <string name="unknow_error_and_late">未知错误，请稍后再试</string>
+    <string name="press_again_to_exit">再按一次退出</string>
+</resources>

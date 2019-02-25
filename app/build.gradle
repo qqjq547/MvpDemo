@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            storeFile file('kshb.jks')
+            storePassword "k4dh1j"
+            keyAlias "kshb"
+            keyPassword "k4dh1j"
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.gcyh.mvp"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "int", "ENV", "0"
+            minifyEnabled false
+            signingConfig signingConfigs.config
+        }
+        release {
+            buildConfigField "int", "ENV", "2"
+            minifyEnabled false
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.+'
+    implementation 'com.android.support:design:28.+'
+    implementation 'com.android.support:support-vector-drawable:28.+'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.github.bumptech.glide:annotations:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.7.1'
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.objectbox:objectbox-android:2.2.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    implementation 'com.orhanobut:logger:2.1.1'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.3@aar'
+    implementation 'top.zibin:Luban:1.1.8'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+    implementation 'com.github.donkingliang:ImageSelector:1.6.7'
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.3-beta09'
+}
